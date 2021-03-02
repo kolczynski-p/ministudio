@@ -12,10 +12,9 @@ def create_app():
 
     with app.app_context():
         app.register_blueprint(routes_bp)
-
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
         db.init_app(app)
         migrate.init_app(app, db)
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
         
         return app
 
