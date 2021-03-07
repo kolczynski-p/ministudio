@@ -1,0 +1,34 @@
+@import '../../App.scss';
+
+.Navbar{
+    width: 100%;
+    height: 100px;
+    padding:10px 30px 10px 30px;
+    box-sizing: border-box;
+    border-bottom:3px solid $color-darkFont ;
+}
+
+.Navbar_logoContainer{
+    float:left;
+    height:100%;
+    display: flex; 
+    align-items:flex-start; 
+    flex-wrap: wrap; 
+    flex-direction: column-reverse;
+
+}
+.Navbar_logoContainer img{
+    float:left;
+    height:100%;
+    
+    
+
+}
+.Navbar_logoContainer h4{
+    float:left;
+
+}
+
+.Navbar_menuIconContainer___closed{
+    float:right;
+}

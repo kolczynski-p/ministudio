@@ -1,0 +1,11 @@
+@import "../../App.scss";
+.Footer {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    height: 150px;
+    background-color: $color-bgDark;
+    color: $color-lightFont;
+    border-top: 3px solid $color-darkFont;
+}

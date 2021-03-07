@@ -2,7 +2,7 @@ import React from "react";
 
 function Gallery() {
     return (
-      <div className='navbar'>
+      <div className='Gallery'>
           <p>Galeria</p>
       </div>
     );

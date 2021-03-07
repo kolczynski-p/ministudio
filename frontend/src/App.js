@@ -10,10 +10,13 @@ import Gallery from './components/Gallery/Gallery.js'
 
 import Navbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
+import PreviewCard from './components/PreviewCard/PreviewCard.js'
+
+import './App.scss'
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <Navbar/>
       <Switch>
         <Route exact path="/">

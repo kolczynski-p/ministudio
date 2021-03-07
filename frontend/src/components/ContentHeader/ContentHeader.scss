@@ -1,0 +1,11 @@
+@import '../../App.scss';
+.ContentHeader{}
+.ContentHeader-header{
+    color:$color-lightFont;
+}
+.ContentHeader-line{
+    width:100%;
+    background-color: $color-lightFont;
+    height:3px;
+    margin-bottom: 30px;
+}
