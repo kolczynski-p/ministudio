@@ -1,0 +1,48 @@
+@import "../../App.scss";
+
+.SliderPanelWrapper {
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SliderPanel-nav {
+}
+
+.SliderPanel-nav__left {
+    transform: rotate(180deg);
+    filter: drop-shadow(0px -3px 2px rgba(0, 0, 0, 0.4));
+}
+
+.SliderPanel-nav__right {
+    filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.4));
+}
+
+.SliderPanel-radiosWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+}
+
+.SliderPanel-radio {
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    margin:10px;
+}
+
+.SliderPanel-radio__current{
+    width: 10px;
+    height: 10px;
+    background: $color-darkGreenFont;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    border-radius: 50%;
+    margin:10px;
+
+}

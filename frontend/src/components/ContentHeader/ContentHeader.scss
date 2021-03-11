@@ -1,11 +1,17 @@
-@import '../../App.scss';
-.ContentHeader{}
-.ContentHeader-header{
-    color:$color-lightFont;
+@import "../../App.scss";
+.ContentHeader {
+    margin-top:20px;
+    margin-bottom:20px;
+
 }
-.ContentHeader-line{
-    width:100%;
-    background-color: $color-lightFont;
-    height:3px;
-    margin-bottom: 30px;
+.ContentHeader-header {
+    text-align: center;
+
+    
+}
+.ContentHeader-line {
+    width: 50%;
+    background-color: $color-darkGreenFont;
+    height: 2px;
+    box-shadow:0px 2px 2px rgba(0, 0, 0, 0.25);
 }

@@ -1,19 +1,21 @@
-import React from "react";
+import React from "react"
 import './PreviewCard.scss'
-import placeholder from '../../assets/gallery/work1_1.jpg'
 
-function PreviewCard() {
-    return (
-      <div className='PreviewCard'>
-        <img className='PreviewCard-image' src={placeholder} alt='previewimg'/>
-        <div className='PreviewCard-info'>
-          <h4>Skitarii Ranger</h4>
-          <h5>4 photos</h5>
-        </div>
+function PreviewCard(props) {
+  const image = props.image;
+  const source ='gallery/'+image;
+
+  return (
+    <div className='PreviewCard'>
+      <img className='PreviewCard-image' src={source} alt={source} />
+      <div className='PreviewCard-courtain'>
+        <div><h5>Skitarii Ranger</h5>
+          <h6>4 photos</h6></div>
 
       </div>
-    );
-  }
-  
-  export default PreviewCard;
-  
+
+    </div>
+  );
+}
+
+export default PreviewCard;

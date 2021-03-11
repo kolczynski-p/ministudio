@@ -4,7 +4,7 @@ import './Footer.scss'
 function Footer() {
     return (
       <div className='Footer'>
-          <p>stopka</p>
+          <p></p>
       </div>
     );
   }
