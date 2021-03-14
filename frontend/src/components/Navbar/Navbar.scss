@@ -1,38 +1,120 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
-.Navbar{
+// Navbar default state
+
+.Navbar {
+    position:relative;
     width: 100%;
     height: 100px;
-    padding:10px 30px 10px 30px;
+    padding: 10px 30px 10px 30px;
     box-sizing: border-box;
-    border-bottom:3px solid $color-darkGreenFont ;
-    box-shadow:0px 2px 2px rgba(0, 0, 0, 0.4);
-    background:white;
+    border-bottom: 3px solid $color-darkGreenFont;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+    background: white;
+
 }
 
-.Navbar_logoContainer{
-    float:left;
-    height:100%;
-    display: flex; 
-    align-items:flex-start; 
-    flex-wrap: wrap; 
+.Navbar-logoContainer {
+    float: left;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     flex-direction: column-reverse;
+}
+.Navbar-logoContainer img {
+    float: left;
+    height: 100%;
+}
+.Navbar-logoContainer h4 {
+    float: left;
+}
+
+// Expandable navbar
+
+.Navbar-expandable {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    padding: 10px 30px 10px 30px;
+    margin:-10px -30px -10px -30px;
+    border-bottom: 3px solid $color-darkGreenFont;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    background: white;
+    z-index:3;
+    opacity:0;
+    background:$color-lightFont;
+    
+    transition: opacity 0.6s, height 0.4s ease-in-out;
+
 
 }
-.Navbar_logoContainer img{
-    float:left;
+
+.Navbar-expandable-linksContainer{
+    position: absolute;
+    left:10%;
+    display:flex;
     height:100%;
-    
-    
+    width:70%;
+    align-items: center;
+    a h2{
+        color:black;
+        position: absolute;
+        bottom:20px;
+    }
 
 }
-.Navbar_logoContainer h4{
-    float:left;
+
+
+
+
+.Navbar-expandable__show{
+    opacity: 1;
+    height:150px;
+}
+
+
+
+.Navbar-expandable__hidden{
 
 }
 
-.Navbar_menuIconContainer___closed{
-    float:right;
+// Hamburger menu icon
+
+.Navbar-menuIconContainer{
+    position:absolute;
+    right:30px;
     width: 60px;
     height: 60px;
+    padding-top:10px;
+    z-index: 3;
+}
+
+.Navbar-menuIconContainer__closed {
+
+    
+}
+.Navbar-menuIconContainer__open {
+
+    
+}
+.Navbar-menuIconLine{
+    float: right;
+    margin-top:7px;
+    height: 6px;
+    background: #a33626;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+
+.Navbar-menuIconLine__l {
+    width: 50px;
+}
+.Navbar-menuIconLine__m {
+    width: 40px;
+}
+
+.Navbar-menuIconLine__s {
+    width: 30px;
 }

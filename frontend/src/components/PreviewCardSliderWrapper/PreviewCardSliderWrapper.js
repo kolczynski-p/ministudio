@@ -40,7 +40,7 @@ class PreviewCardSliderWrapper extends React.Component {
 
     return (
       <div className='PreviewCardSliderWrapper'>
-        <Link to="/gallery">
+        <Link to={`/gallery/${previewImages[currentImageIndex]}`}>
           <PreviewCard
             image={previewImages[currentImageIndex]}
           />

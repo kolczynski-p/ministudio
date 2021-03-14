@@ -2,7 +2,9 @@ import React from "react";
 import {
   BrowserRouter,
   Switch,
-  Route
+  Route,
+  Router,
+  Redirect
 } from "react-router-dom";
 
 import Home from './components/Home/Home.js'
@@ -22,8 +24,9 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route path="/gallery">
-          <Gallery/>
+        <Route path="/gallery/:id?" component={Gallery}>
+        </Route>
+        <Route exact path="/gallery" component={Gallery}>
         </Route>
       </Switch>
       <Footer/>
