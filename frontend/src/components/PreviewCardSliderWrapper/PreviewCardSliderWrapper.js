@@ -13,17 +13,34 @@ class PreviewCardSliderWrapper extends React.Component {
     super(props);
     this.changeIndex = this.changeIndex.bind(this);
     this.state = {
-      previewImages: ['work1_1.jpg', 'work1_2.jpg', 'work1_3.jpg', 'work1_4.jpg'],
+      work: {},
+      images: [],
+      imagesAmount: 4,
       currentImageIndex: 0
     }
   }
+  componentDidMount() {
+    let imagesList;
+
+    fetch('http://localhost:5000/works/1')
+      .then((response) => { return response.json() })
+      .then((json) => { this.setState({ work: json }) });
+
+    fetch(`http://localhost:5000/works/1/photos`)
+      .then(response => { return response.json() })
+      .then((json) => { this.setState({ images: json.photos }) });
+
+
+  }
+
+
   changeIndex(value) {
-    if ((this.state.currentImageIndex + value) === this.state.previewImages.length) {
+    if ((this.state.currentImageIndex + value) === this.state.imagesAmount) {
       this.setState({ currentImageIndex: 0 });
     }
 
     else if ((this.state.currentImageIndex + value) < 0) {
-      this.setState({ currentImageIndex: this.state.previewImages.length - 1 });
+      this.setState({ currentImageIndex: this.state.imagesAmount - 1 });
     }
     else
       this.setState({ currentImageIndex: this.state.currentImageIndex + value });
@@ -34,17 +51,16 @@ class PreviewCardSliderWrapper extends React.Component {
 
 
   render() {
-    const previewImages = this.state.previewImages;
+    const images = this.state.images;
     const currentImageIndex = this.state.currentImageIndex;
-    const imagesNumber = this.state.previewImages.length;
+    const imagesNumber = this.state.imagesAmount;
 
     return (
       <div className='PreviewCardSliderWrapper'>
-        <Link to={`/gallery/${previewImages[currentImageIndex]}`}>
-          <PreviewCard
-            image={previewImages[currentImageIndex]}
-          />
-        </Link>
+
+        <PreviewCard
+          key={this.state.work.workId} work={this.state.work} previewImage={this.state.images[currentImageIndex]}
+        />
         <SliderPanelWrapper
           imagesNumber={imagesNumber}
           index={currentImageIndex}
@@ -52,7 +68,9 @@ class PreviewCardSliderWrapper extends React.Component {
         />
 
         <div className='PreviewCardSliderWrapper-seeAllBtn'>
-          <h4>See all</h4>
+          <NavLink to="/gallery" activeClassName="PreviewCardSliderWrapper-seeAllBtn-galleryLink">
+            See All
+          </NavLink>
         </div>
 
       </div>

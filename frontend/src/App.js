@@ -13,6 +13,7 @@ import Gallery from './components/Gallery/Gallery.js'
 import Navbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
 import PreviewCard from './components/PreviewCard/PreviewCard.js'
+import Work from './components/Work/Work.js'
 
 import './App.scss'
 
@@ -24,7 +25,7 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route path="/gallery/:id?" component={Gallery}>
+        <Route path="/gallery/works/:id?" component={Work}>
         </Route>
         <Route exact path="/gallery" component={Gallery}>
         </Route>

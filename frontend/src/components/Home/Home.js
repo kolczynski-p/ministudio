@@ -6,10 +6,10 @@ import PreviewCardSliderWrapper from '../PreviewCardSliderWrapper/PreviewCardSli
 
 function Home() {
     return (
-      <div className='Home'>
+      <section className='Home ContentPageSection'>
           <ContentHeader text='Our works:'/>
           <PreviewCardSliderWrapper/>
-      </div>
+      </section>
     );
   }
   

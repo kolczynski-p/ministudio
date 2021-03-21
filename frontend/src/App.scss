@@ -1,11 +1,20 @@
-$color-darkFont:#A33626;
-$color-lightFont:#BD8006;
-$color-darkGreenFont:#0B5157;
+$color-darkFont: #a33626;
+$color-lightFont: #bd8006;
+$color-darkGreenFont: #0b5157;
 
-*{
+* {
   margin: 0 auto;
-
+  font-family: Montserrat;
 }
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   height: 100%;
+}
+
+.ContentPageSection {
+  min-height: 800px;
+  padding: 0px 30px 50px 30px;
+  background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 }

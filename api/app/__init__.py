@@ -3,12 +3,15 @@ import os
 from flask_migrate import Migrate
 from .models import db 
 from .routes import routes_bp
+from flask_cors import CORS
+
 
 migrate = Migrate()
 
 
 def create_app():
     app = Flask('__name__')
+    CORS(app)
 
     with app.app_context():
         app.register_blueprint(routes_bp)

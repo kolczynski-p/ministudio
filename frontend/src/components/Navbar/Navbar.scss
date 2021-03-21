@@ -3,7 +3,7 @@
 // Navbar default state
 
 .Navbar {
-    position:relative;
+    position: relative;
     width: 100%;
     height: 100px;
     padding: 10px 30px 10px 30px;
@@ -11,7 +11,6 @@
     border-bottom: 3px solid $color-darkGreenFont;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     background: white;
-
 }
 
 .Navbar-logoContainer {
@@ -22,6 +21,10 @@
     flex-wrap: wrap;
     flex-direction: column-reverse;
 }
+.Navbar-logoContainerLink {
+    color: black;
+    text-decoration: none;
+}
 .Navbar-logoContainer img {
     float: left;
     height: 100%;
@@ -30,78 +33,78 @@
     float: left;
 }
 
+.Navbar_isActive {
+    h2 {
+        
+        color: $color-darkGreenFont !important;;
+    }
+}
+
 // Expandable navbar
 
 .Navbar-expandable {
     position: absolute;
     width: 100%;
-    height: 100px;
+
     padding: 10px 30px 10px 30px;
-    margin:-10px -30px -10px -30px;
+    height: 20px;
+    margin: -10px -30px -10px -30px;
     border-bottom: 3px solid $color-darkGreenFont;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     background: white;
-    z-index:3;
-    opacity:0;
-    background:$color-lightFont;
-    
-    transition: opacity 0.6s, height 0.4s ease-in-out;
+    z-index: 3;
+    opacity: 0;
+    background: $color-lightFont;
 
-
+    transition: opacity 0.4s, height 0.2s ease-in-out;
 }
 
-.Navbar-expandable-linksContainer{
-    position: absolute;
-    left:10%;
-    display:flex;
-    height:100%;
-    width:70%;
+.Navbar-expandable-linksContainer {
+
+    left: 10%;
+    display: flex;
+    height: 100%;
+    width: 100%;
     align-items: center;
-    a h2{
-        color:black;
-        position: absolute;
-        bottom:20px;
+    a h2 {
+        font-size: 1.75rem;
+        color: black;
+        bottom: 30px;
+        display: none;
+        text-decoration: none;
     }
-
 }
 
-
-
-
-.Navbar-expandable__show{
+.Navbar-expandable__show {
     opacity: 1;
-    height:150px;
+    height: 120px;
+    a h2 {
+        display: inline-block;
+    }
 }
 
-
-
-.Navbar-expandable__hidden{
-
+.Navbar-expandable__hidden {
 }
 
 // Hamburger menu icon
 
-.Navbar-menuIconContainer{
-    position:absolute;
-    right:30px;
+.Navbar-menuIconContainer {
+    position: absolute;
+    right: 30px;
     width: 60px;
     height: 60px;
-    padding-top:10px;
+    padding-top: 10px;
     z-index: 3;
 }
 
 .Navbar-menuIconContainer__closed {
-
-    
 }
 .Navbar-menuIconContainer__open {
-
-    
 }
-.Navbar-menuIconLine{
+.Navbar-menuIconLine {
     float: right;
-    margin-top:7px;
+    margin-top: 7px;
     height: 6px;
     background: #a33626;
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
