@@ -1,5 +1,5 @@
 import React from "react"
-import './PreviewCardSliderWrapper.scss'
+import './GalleryWorkSliderWrapper.scss'
 import PreviewCard from '../PreviewCard/PreviewCard.js'
 import SliderPanelWrapper from '../SliderPanelWrapper/SliderPanelWrapper.js'
 import {
@@ -8,7 +8,7 @@ import {
 } from "react-router-dom"
 
 
-class PreviewCardSliderWrapper extends React.Component {
+class GalleryWorkSliderWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.changeIndex = this.changeIndex.bind(this);
@@ -21,12 +21,13 @@ class PreviewCardSliderWrapper extends React.Component {
   }
   componentDidMount() {
     let imagesList;
+    const workId = this.props.workId;
 
-    fetch('http://localhost:5000/works/1')
+    fetch(`http://localhost:5000/works/${workId}`)
       .then((response) => { return response.json() })
       .then((json) => { this.setState({ work: json }) });
 
-    fetch(`http://localhost:5000/works/1/photos`)
+    fetch(`http://localhost:5000/works/${workId}/photos`)
       .then(response => { return response.json() })
       .then((json) => { this.setState({ images: json.photos }) });
 
@@ -54,29 +55,25 @@ class PreviewCardSliderWrapper extends React.Component {
     const images = this.state.images;
     const currentImageIndex = this.state.currentImageIndex;
     const imagesNumber = this.state.imagesAmount;
+    let folder = '/works_images/' + images[currentImageIndex];
 
     return (
-      <div className='PreviewCardSliderWrapper'>
+      <div className='GalleryWorkSliderWrapper'>
+        <div className='MainImageWrapper'>
+          <img className='SliderImage__current' src={folder} alt={folder} />
+        </div>
+        <div className="NavigationArrowsBar"></div>
+        <div className></div>
 
-        <PreviewCard
-          key={this.state.work.workId} work={this.state.work} sliderImage={this.state.images[currentImageIndex]}
-        />
         <SliderPanelWrapper
           imagesNumber={imagesNumber}
           index={currentImageIndex}
           onIndexChange={this.changeIndex}
         />
-
-        <div className='PreviewCardSliderWrapper-seeAllBtn'>
-          <NavLink to="/gallery" activeClassName="PreviewCardSliderWrapper-seeAllBtn-galleryLink">
-            See All
-          </NavLink>
-        </div>
-
       </div>
     );
   }
 
 }
 
-export default PreviewCardSliderWrapper;
+export default GalleryWorkSliderWrapper;

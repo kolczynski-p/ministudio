@@ -1,19 +1,32 @@
 @import "../../App.scss";
 .ContentHeader {
-    margin-top:20px;
-    margin-bottom:20px;
-
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 .ContentHeader-header {
-    text-align: center;
-    font-size: 1.75rem;
-
-
-    
+    color: $color-darkGreenFont;
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
 }
 .ContentHeader-line {
     width: 50%;
     background-color: $color-darkGreenFont;
     height: 2px;
-    box-shadow:0px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.ContentHeader-header::before {
+
+}
+.ContentHeader-header::after {
+    position: absolute;
+    content: "";
+    height: 3px;
+    z-index: -2;
+    background: linear-gradient(90deg, #0b5157 -12.36%, rgba(11, 81, 87, 0) 100%);
+    box-shadow: 6px 8px 2px rgba(0, 0, 0, 0.08);
+    width: 120%;
+    display: block;
 }

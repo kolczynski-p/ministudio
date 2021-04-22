@@ -7,38 +7,34 @@ import {
 class PreviewCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      previewImage: ''
-
-    }
-
 
   }
 
-  componentDidMount() {
-
-    fetch(`http://localhost:5000/works/${this.props.work.workId}/photos/1`)
-      .then(response => {return response.json()})
-    .then((json) => {this.setState({ previewImage: json.photoName })});
-  }
+  //componentDidMount() {
+//
+  //  fetch(`http://localhost:5000/works/${this.props.work.workId}/photos/1`)
+  //    .then(response => {return response.json()})
+  //  .then((json) => {this.setState({ previewImage: json.photoName })});
+  //}
 
   render() {
     const workId= this.props.work.workId;
+    const previewImage= this.props.work.previewImage;
     const title= this.props.work.title;
     const description = this.props.work.description;
-    let folder ='works_images/';
-    if(this.props.previewImage!=null)
-      folder ='works_images/'+this.props.previewImage;
+    let folder ='/works_images/';
+    if(this.props.sliderImage!=null)
+      folder +=this.props.sliderImage;
     else
-      folder ='works_images/'+this.state.previewImage;
+      folder +=previewImage;
 
     return (
       <Link to={`/gallery/works/${workId}`}>
         <div className={`PreviewCard ${this.props.className}`} >
-          <img className='PreviewCard-image' src={folder} alt={folder + this.props.previewImage} />
+          <img className='PreviewCard-image' src={folder} alt={folder} />
           <div className='PreviewCard-courtain'>
-            <div><h5>{title}</h5>
-              <h6>4 photos</h6></div>
+            <div><h3>{title}</h3>
+              <h4>4 photos</h4></div>
 
           </div>
 

@@ -8,6 +8,7 @@ $color-darkGreenFont: #0b5157;
 }
 html,
 body,
+
 #root,
 .App {
   height: 100%;
@@ -16,5 +17,6 @@ body,
 .ContentPageSection {
   min-height: 800px;
   padding: 0px 30px 50px 30px;
-  background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  //background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
+

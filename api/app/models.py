@@ -26,9 +26,9 @@ class Work(db.Model):
 
     def make_dict(self):
         additionDate_string = self.additionDate.strftime('%d/%m/%Y')
-
+        image = self.photos[0].photoName
         dictionary = dict(workId=self.workId, title=self.title,
-                          description=self.description, additionDate=additionDate_string)
+                          description=self.description, additionDate=additionDate_string, previewImage=image)
         return dictionary
 
 

@@ -1,30 +1,24 @@
 import React from "react"
 import './Work.scss'
-import { Route, Router } from "react-router-dom"
+import { Route, Router, Link, useHistory } from "react-router-dom"
 import ContentHeader from '../ContentHeader/ContentHeader.js';
+import GalleryWorkSliderWrapper from '../GalleryWorkSliderWrapper/GalleryWorkSliderWrapper.js';
 
-class Work extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      workId : this.props.match.params.id,
+function Work(props) {
+  const workId=props.match.params.id;
+  const history = useHistory();
+  const handleGoBack = () => {
+    history.goBack()
   };
-  }
 
+  return (
+    <section className='Work ContentPageSection'>
+      <div onClick={handleGoBack}><ContentHeader text='Back' /></div>
+      <GalleryWorkSliderWrapper workId={workId}/>
+    </section>
+  );
 
-
-
-
-  render() {
-
-    return (
-      <div className='Work'>
-        <ContentHeader text = {`Gallery - work. ${this.state.workId}`} />
-        
-      </div>
-    );
-  }
 }
 
 export default Work;

@@ -5,12 +5,14 @@
 .Navbar {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 120px;
     padding: 10px 30px 10px 30px;
     box-sizing: border-box;
-    border-bottom: 3px solid $color-darkGreenFont;
+    border-bottom: 4px solid $color-darkGreenFont;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
-    background: white;
+    background: rgb(189,128,6);
+    background: linear-gradient(165deg, rgba(189,128,6,0.6222689759497548) 0%, rgba(11,81,87,1) 70%);
+
 }
 
 .Navbar-logoContainer {
@@ -36,7 +38,8 @@
 .Navbar_isActive {
     h2 {
         
-        color: $color-darkGreenFont !important;;
+        color: white !important;
+        font-size:2em !important;
     }
 }
 
@@ -49,13 +52,13 @@
     padding: 10px 30px 10px 30px;
     height: 20px;
     margin: -10px -30px -10px -30px;
-    border-bottom: 3px solid $color-darkGreenFont;
+    border-bottom: 4px solid $color-lightFont;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
-    background: white;
     z-index: 3;
     opacity: 0;
-    background: $color-lightFont;
+    background: rgb(189,128,6);
+    background: linear-gradient(170deg, rgba(11,81,87,1) 0%, rgba(189,128,6,1) 90%);
 
     transition: opacity 0.4s, height 0.2s ease-in-out;
 }
